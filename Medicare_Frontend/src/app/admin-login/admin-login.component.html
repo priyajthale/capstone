@@ -1,0 +1,23 @@
+<div class="container w-25" style="margin-top: 5%;;padding: 2%;">
+    <h1 style="text-align: center; ">Admin Login</h1>
+  <form  #loginForm="ngForm" (ngSubmit)="adminLogin()">
+      <div class="form-group">
+        <input type="text" 
+        placeholder="Email"  
+        class="form-control" 
+        name="aname"  
+        [(ngModel)]="aname" 
+        required #name="ngModel" >
+        <br><span *ngIf="name.invalid && name.touched" style="color : red">Please Enter a valid input</span>
+      </div>
+      <div class="form-group">
+        <input type="password" 
+        class="form-control" 
+        name="pwd" [(ngModel)]="pwd" placeholder="Password" 
+        #pass="ngModel" required minlength="2">
+        <br><span *ngIf="pass.invalid && pass.touched" style="color : red">Please Enter a valid input</span>
+      </div>
+      <button style="text-align: center; font-size: 1.25rem; margin-left: 45%;" type="submit" 
+      class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+  <table class="table">
+                
+    <tr>
+      <th scope="col">Sr. No.</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Price</th>
+      <th scope="col">Product Seller</th>
+      <th scope="col">Product Description</th>
+      <th scope="col">Product Offer</th>
+      <th scope="col">Product Image</th>
+      <th scope="col">Product Quantity</th>
+      </tr>           
+    <tr *ngFor="let product of products">
+      <td>{{product.id}}</td> 
+      <td>{{product.pName}}</td>
+      <td>{{product.pPrice}}</td>
+      <td>{{product.pSeller}}</td> 
+      <td>{{product.pDescription}}</td>
+      <td>{{product.pOffer}}</td>
+      <td>{{product.url}}</td> 
+      <td>{{product.qty}}</td> 
+      <td> <button (click)="updateProducts(product.id)" class="btn btn-sm btn-danger">Update</button></td>
+      <td><button (click)="deleteProducts(product.id) " class="btn btn-sm btn-danger">Delete</button></td>
+    </tr>
+  </table>
+
+        </div>
+    </div>
+</div>

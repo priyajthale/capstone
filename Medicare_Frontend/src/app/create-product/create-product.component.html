@@ -1,0 +1,49 @@
+<div class="container" style="align-self: center;">
+<h2 style="text-align: center; margin-top:5%;">Add Products</h2>
+<form #products="ngForm" (ngSubmit)="addProducts(products.value)">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label">Name:</label>
+      <div class="col-md-3">
+        <input type="text" class="form-control" name ="pName" id="name" placeholder="Name" ngModel required>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label">Price:</label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" name ="pPrice" id="price" placeholder="Price" ngModel required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label">Seller:</label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" name ="pSeller" id="seller" placeholder="Seller" ngModel required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label">Description:</label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" name ="pDescription" id="description" placeholder="Product Description" ngModel required>
+        </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label">Quantity:</label>
+      <div class="col-md-3">
+        <input type="text" class="form-control" name ="qty" id="qty" placeholder="Quantity" ngModel required>
+      </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Url:</label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" name ="url" id="url" placeholder="Add Image Url" ngModel required>
+    </div>
+</div>
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label">Offer:</label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" name ="pOffer" id="offer" placeholder="Offer" ngModel required>
+        </div>
+    </div>
+    <button style="font-size: 0.75rem; margin-left: 17%;" type="submit" 
+    class="btn btn-primary">Create Product</button>
+  </form>
+</div>

@@ -1,0 +1,30 @@
+<br>
+    <div class="cart">
+        <button (click)="cartdata()" class="btn btn-sm btn-primary" style="text-align: left;" >Cart</button>
+     </div>
+    <div class="logout">
+        <button (click)="logout()" class="btn btn-sm btn-primary" style="text-align: right;">Logout</button> 
+    </div>
+<br>  
+<h2 style="text-align: center;">Welcome to Medicare </h2>
+<nav class="navbar" style="width: 250px; margin-top: 1%; margin-left: 40%;">
+    <input class="form-control" type="text" name="pName" [(ngModel)]="pName" (ngModelChange)="search()"
+    placeholder="Enter data to search">
+</nav>
+<div class="sorting">
+    <button class="btn btn-sm btn-primary" style="margin-left: 1%; margin-right: 1%;">Sort By:</button>
+    <button class="btn btn-sm btn-info" style="margin-left: 1%; margin-right: 1%;" (click)="lowtohigh()">Price -- Low to High</button>
+    <button class="btn btn-sm btn-info" style="margin-left: 1%; margin-right: 1%;" (click)="hightolow()">Price -- High to Low</button>
+</div>
+<div class="wrapper" style="width: 100%; height: fit-content; align-items: center; justify-items: center; 
+position: absolute; text-align: center; margin-top: 2%;">
+    
+    <div class="item" style="align-self: center; text-align: center; margin-bottom: 2%; margin-right: 1%; padding: 10px; float: left; "
+                *ngFor="let products of product">
+                    <img src="assets/{{products.url}}" style="height: 200px; width: 200px;">    
+                    <h6>{{products.pName}}</h6>
+                    <h6> Rs. {{products.pPrice}}</h6> 
+                    <button (click)="addtoCart(products.id)" class="btn btn-sm btn-primary" [disabled]="products.qty==0">Add to Cart</button>
+    </div>
+</div>
+

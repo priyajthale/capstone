@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <table class="table">
+                <tr>
+                  <th scope="col">Product Image</th>
+                  <th scope="col">Product Id</th>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Unit Price</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Total Price</th>
+                </tr>
+
+                <tr *ngFor="let cart of carts">
+                  <td><img src="assets/{{cart.products.url}}" style="height: 50px; width: 50px;"></td>
+                  <td>{{cart.products.id}}</td>
+                  <td>{{cart.products.pName}}</td>
+                  <td>{{cart.products.pPrice}}</td>
+                  <td>
+                    <button class="btn btn-info" (click)="decreaseQuantity(cart, cart.id)" [disabled]="cart.tQty==1"> - </button>
+                        {{cart.tQty}}
+                    <button class="btn btn-info" (click)="increaseQuantity(cart, cart.id)"> + </button>
+                  </td>
+                  <td>{{cart.tPrice}}</td>  
+                  <td>
+                    <button class="btn btn-danger" (click)="deleteitems(cart.id)"> Delete Items </button>
+                  </td>
+                <tr>
+            </table>
+      </div>
+  </div>
+</div>
+<button  class="btn btn-sm btn-primary" (click)="totalprice()">Total Amount</button>
+<h6 style="margin-top: 1%;"> Total Amount:  {{grandTotal | currency : 'INR'}}</h6>
+<div class="wrapper">
+  <button class="btn btn-sm btn-danger" (click)="Payment()">Payment</button>
+</div>
+
